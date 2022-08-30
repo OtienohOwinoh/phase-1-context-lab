@@ -57,6 +57,13 @@ let wagesEarnedOnDate = function(dateSought){
     return parseFloat(rawWage.toString())
 }
 
+let findEmployeeByFirstName = function(srcArray, firstName) {
+    return srcArray.find(function(rec){
+      return rec.firstName === firstName
+    })
+  }
+
+  
 let allWagesFor = function(){
     let eligibleDates = this.timeInEvents.map(function(e){
         return e.date
@@ -67,12 +74,6 @@ let allWagesFor = function(){
     }.bind(this), 0)
 
     return payable
-}
-
-let findEmployeeByFirstName = function(srcArray, firstName) {
-  return srcArray.find(function(rec){
-    return rec.firstName === firstName
-  })
 }
 
 let calculatePayroll = function(arrayOfEmployeeRecords){
